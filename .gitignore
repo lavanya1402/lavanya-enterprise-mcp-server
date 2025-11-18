@@ -1,0 +1,79 @@
+# -------------------------
+# PYTHON / VENV
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.db
+*.sqlite3
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environment folders
+.venv/
+venv/
+ENV/
+env/
+.ipynb_checkpoints/
+
+# -------------------------
+# ENV / SECRETS
+# -------------------------
+.env
+.env.local
+.env.production
+.env.development
+*.env
+
+# Azure / Auth tokens
+*.json
+*.pem
+*.key
+*.crt
+*.pfx
+*token*
+*credential*
+
+# -------------------------
+# NGROK / MCP CACHE
+# -------------------------
+ngrok.yml
+.ngrok/
+*.log
+
+# -------------------------
+# STREAMLIT
+# -------------------------
+.streamlit/secrets.toml
+
+# -------------------------
+# IDE / EDITOR FILES
+# -------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# PROJECT SPECIFIC
+# -------------------------
+# Python compiled artifacts
+*.so
+*.dll
+*.cache
+
+# Temporary files
+tmp/
+temp/
+logs/
+*.log
+
+# Azure agent files (auto-generated)
+azure_agent_client/__pycache__/
+local_settings.json

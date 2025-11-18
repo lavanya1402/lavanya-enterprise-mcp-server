@@ -1,0 +1,6 @@
+mcp
+azure-identity
+azure-ai-agents
+python-dotenv
+requests
+streamlit
