@@ -1,12 +1,12 @@
 ### **Corp Secure Supervisor — Azure Agents × MCP × RBAC × PII**
 
-**Architected by Lavanya Srivastava (Enterprise Agentic AI Architect)**
+**Built by Lavanya Srivastava, Lavanya AI Consultancy**
 
 ---
 
 ## 🌟 **Overview**
 
-**Corp Secure Supervisor** is an enterprise-grade AI automation system that demonstrates how modern companies use **Agentic AI** to automate secure internal workflows.
+**Corp Secure Supervisor** is a working prototype that demonstrates how modern companies use **Agentic AI** to automate secure internal workflows.
 
 A manager gives **one natural-language request**, and the system:
 
@@ -17,7 +17,7 @@ A manager gives **one natural-language request**, and the system:
 * Sanitizes PII before communication
 * Sends the final output safely
 
-This prototype mirrors production systems used inside **Microsoft, Deloitte, Accenture, Wells Fargo, Walmart Tech, TCS, Infosys**, and other global enterprises.
+It shows the pattern many organisations are adopting for internal AI assistants: an agent that can act through tools, but only within each user's permissions and without leaking personal data.
 
 ---
 
@@ -56,7 +56,7 @@ Your MCP tools run locally but securely connect to Azure through HTTPS.
 
 ## 🏗 **Architecture (High-Level)**
 
-*No code. Only conceptual clarity.*
+
 
 ```
 Manager Request →
