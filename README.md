@@ -97,13 +97,47 @@ lavanya-enterprise-mcp-server/
 │
 ├── streamlit_azure_mcp_app.py         # Streamlit front-end (Manager UI)
 │
-├── .env                               # Local secrets (ignored by Git)
+├── .env.example                       # Copy to .env (never commit .env)
+├── tests/                             # Unit tests (pytest)
 ├── requirements.txt
 ├── .gitignore
 └── LICENSE
 ```
 
 ---
+
+## 🚀 **Run Locally**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env               # fill in your Azure and MCP values
+
+# 1. Start the MCP tool server (streamable HTTP)
+python mcp_server/corp_mcp_server.py
+
+# 2. Expose it over HTTPS so Azure can reach it
+ngrok http 8000                    # put the URL in MCP_SERVER_URL
+
+# 3. Start the manager UI
+streamlit run streamlit_azure_mcp_app.py
+```
+
+Sign in to Azure first (`az login`) so `DefaultAzureCredential` can reach your Foundry project.
+
+## 🔐 **How PII protection works**
+
+Before an email is drafted or sent, `scan_pii_logic` finds and masks emails, phone numbers, PAN, Aadhaar and card numbers, and returns a 0–1 risk score based on the most sensitive item found. Contact details score low; government IDs and card numbers score above 0.8, and `send_email_secure` refuses to send above that threshold.
+
+## 🧪 **Tests**
+
+```bash
+pip install pytest
+python -m pytest -q tests
+```
+
+The tests cover role permissions, the blocked-role path and PII detection. They stub the MCP SDK, so no server or Azure account is needed.
 
 ## 🌍 **ngrok Integration**
 

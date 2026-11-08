@@ -77,3 +77,5 @@ logs/
 # Azure agent files (auto-generated)
 azure_agent_client/__pycache__/
 local_settings.json
+.ruff_cache/
+.pytest_cache/
